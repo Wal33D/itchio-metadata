@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wal33D/itchio-metadata.git"
+    "url": "git+https://github.com/Wal33D/itchio-metadata.git"
   },
   "bugs": {
     "url": "https://github.com/Wal33D/itchio-metadata/issues"
