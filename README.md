@@ -1,10 +1,10 @@
 # 🕹️ itchio-metadata
 
-A Node.js package to fetch and parse metadata for games hosted on Itch.io, providing detailed information about the latest game versions.
+A Node.js package to grab and parse metadata for games on Itch.io, giving you all the details about the latest game versions.
 
 ## 📦 Installation
 
-To install the package, run:
+To get the package, just run:
 
 ```bash
 npm install itchio-metadata
@@ -13,8 +13,7 @@ npm install itchio-metadata
 ## 🚀 Usage
 
 First, set up your environment variables in a `.env.local` file:
-You can set the ENV variables in your `.env.local` file as follows
-or you can pass them in directly to the `fetchItchGameData` function.
+You can set the ENV variables in your `.env.local` file as shown below or pass them directly to the `fetchItchGameData` function.
 
 ```plaintext
 ITCH_API_KEY=
@@ -22,7 +21,7 @@ ITCH_API_KEY=
 
 ### Example Usage
 
-Here's an example of how to use the `fetchItchGameData` function:
+Here’s a quick example of how to use `fetchItchGameData`:
 
 ```javascript
 import * as dotenv from "dotenv";
@@ -51,7 +50,7 @@ exampleUsage().catch((err) =>
 );
 ```
 
-If the `ITCH_API_KEY` is set in the `.env.local` file, you can use the function like this:
+If `ITCH_API_KEY` is set in the `.env.local` file, you can use the function like this:
 
 ```javascript
 const latestVersionInfoResult = await fetchItchGameData({
@@ -70,7 +69,7 @@ const latestVersionInfoResult = await fetchItchGameData({
 
 ### Environment Variables
 
-- `ITCH_API_KEY`: Your Itch.io API key (optional, but recommended for fetching upload data).
+- `ITCH_API_KEY`: Your Itch.io API key (optional but recommended for fetching upload data).
 
 ## 📘 API
 
@@ -159,7 +158,7 @@ npm start
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
 
 ## ✨ Author
 
