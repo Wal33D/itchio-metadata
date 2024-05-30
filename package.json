@@ -1,8 +1,9 @@
 {
   "name": "itchio-metadata",
-  "version": "1.0.27",
+  "version": "1.0.3",
   "description": "A Node.js package to fetch and parse metadata for games hosted on Itch.io, providing detailed information about the latest game versions.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "start": "tsc && ts-node dist/index.js",
