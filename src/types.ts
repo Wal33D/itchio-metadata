@@ -5,6 +5,7 @@ export interface GameMetadata {
 	coverImage: string;
 	gamePage: string;
 	comments: string;
+    metaDataUrl: string;
 	latestVersion: {
 		displayName: string;
 		versionId: number;
@@ -31,7 +32,9 @@ export interface GameMetadata {
 }
 
 export interface FetchGameDataParams {
-	itchApiKey?: string;
-	author?: string;
-	gameTitle?: string;
-}
+    itchApiKey?: string;
+    author?: string;
+    gameTitle?: string;
+    gameUrl?: string;
+  }
+  

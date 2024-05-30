@@ -15,12 +15,9 @@ npm install itchio-metadata
 First, set up your environment variables in a `.env.local` file:
 You can set the ENV variables in your `.env.local` file as follows
 or you can pass them in directly to the `fetchItchGameData` function.
-ITCH_DATA_URI is specific to the ENV file, if not supplied it will
-be programtically built based upon the author and gameTitle params.
 
 ```plaintext
 ITCH_API_KEY=
-ITCH_DATA_URI=https://your-itch-author.itch.io/your-game
 ```
 
 ### Example Usage
@@ -54,10 +51,26 @@ exampleUsage().catch((err) =>
 );
 ```
 
+If the `ITCH_API_KEY` is set in the `.env.local` file, you can use the function like this:
+
+```javascript
+const latestVersionInfoResult = await fetchItchGameData({
+  author: "baraklava",
+  gameTitle: "manic-miners",
+});
+```
+
+You can also use the `gameUrl` parameter directly:
+
+```javascript
+const latestVersionInfoResult = await fetchItchGameData({
+  gameUrl: "https://baraklava.itch.io/manic-miners",
+});
+```
+
 ### Environment Variables
 
 - `ITCH_API_KEY`: Your Itch.io API key (optional, but recommended for fetching upload data).
-- `ITCH_DATA_URI`: The base URL of your game's Itch.io page (e.g., `https://baraklava.itch.io/manic-miners`).
 
 ## 📘 API
 
@@ -71,6 +84,7 @@ Fetches metadata for a game hosted on Itch.io.
   - `itchApiKey` (string): Your Itch.io API key.
   - `author` (string): The author of the game.
   - `gameTitle` (string): The title of the game.
+  - `gameUrl` (string): The full URL of the game's Itch.io page.
 
 #### Returns
 
@@ -121,6 +135,7 @@ export interface FetchGameDataParams {
   itchApiKey?: string;
   author?: string;
   gameTitle?: string;
+  gameUrl?: string;
 }
 ```
 
@@ -149,3 +164,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## ✨ Author
 
 Waleed Judah
+
+## 📌 Links
+
+- [npm package](https://www.npmjs.com/package/itchio-metadata)
+- [GitHub repository](https://github.com/Wal33D/itchio-metadata)

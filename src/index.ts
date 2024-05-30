@@ -10,7 +10,6 @@ async function exampleUsage() {
 		const latestVersionInfoResult = await fetchItchGameData({
 			author: 'baraklava',
 			gameTitle: 'manic-miners',
-			itchApiKey: process.env.ITCH_API_KEY,
 		});
 		console.log(latestVersionInfoResult);
 		console.log(`[INFO] Successfully fetched game metadata from Itch.io`);

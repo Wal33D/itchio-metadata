@@ -3,11 +3,13 @@ import * as dotenv from 'dotenv';
 import { FetchGameDataParams, GameMetadata } from './types';
 dotenv.config({ path: '.env.local' });
 
-export async function fetchItchGameData({ itchApiKey, author, gameTitle }: FetchGameDataParams = {}): Promise<GameMetadata> {
+export async function fetchItchGameData({ itchApiKey, author, gameTitle, gameUrl }: FetchGameDataParams = {}): Promise<GameMetadata> {
 	const ITCH_API_KEY = itchApiKey || process.env.ITCH_API_KEY;
 	let ITCH_DATA_URI = process.env.ITCH_DATA_URI;
 
-	if (author && gameTitle) {
+	if (gameUrl) {
+		ITCH_DATA_URI = `${gameUrl}/data.json`;
+	} else if (author && gameTitle) {
 		ITCH_DATA_URI = `https://${author}.itch.io/${gameTitle}/data.json`;
 	} else if (ITCH_DATA_URI) {
 		ITCH_DATA_URI = `${ITCH_DATA_URI}/data.json`;
@@ -33,6 +35,7 @@ export async function fetchItchGameData({ itchApiKey, author, gameTitle }: Fetch
 			coverImage: detailsData.cover_image,
 			gamePage: detailsData.links.self,
 			comments: detailsData.links.comments,
+			metaDataUrl: ITCH_DATA_URI,
 			latestVersion: {
 				displayName: '',
 				versionId: 0,
@@ -91,6 +94,7 @@ export async function fetchItchGameData({ itchApiKey, author, gameTitle }: Fetch
 		coverImage: detailsData.cover_image,
 		gamePage: detailsData.links.self,
 		comments: detailsData.links.comments,
+		metaDataUrl: ITCH_DATA_URI,
 		latestVersion: {
 			displayName: latestUpload.display_name,
 			filename: latestUpload.filename,
