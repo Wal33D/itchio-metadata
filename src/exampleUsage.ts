@@ -1,5 +1,5 @@
 import * as dotenv from "dotenv";
-import { fetchItchGameData } from "./fetchItchGameData";
+import { fetchItchGameData } from "./index";
 
 dotenv.config({ path: ".env.local" });
 
