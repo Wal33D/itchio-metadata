@@ -1,0 +1,15 @@
+{
+   "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "./dist",
+      "allowJs": true, // Allow JavaScript files to be compiled
+      "checkJs": true // Enable error reporting in JavaScript files
+   },
+   "include": ["src/**/*"],
+   "exclude": ["node_modules"]
+}

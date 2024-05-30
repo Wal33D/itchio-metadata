@@ -1,0 +1,19 @@
+{
+  "name": "itchio-metadata",
+  "version": "1.0.0",
+  "description": "A Node.js package to fetch and parse metadata for games hosted on Itch.io, providing detailed information about the latest game versions.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "resetdist": "rimraf dist",
+    "build": "tsc",
+    "prep": "npm run resetdist && npm run build",
+    "start": "npm run prep && node dist/index.js"
+  },
+  "author": "Waleed Judah",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  }
+}
